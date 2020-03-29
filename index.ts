@@ -9,7 +9,8 @@ const instance = new gcp.compute.Instance("vpn", {
   machineType: "f1-micro",
   networkInterfaces: [
     {
-      accessConfigs: [{}] // Enable external access
+      accessConfigs: [{}], // Enable external access
+      network: "default"
     }
   ]
 });
