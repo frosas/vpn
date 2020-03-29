@@ -2,9 +2,8 @@
 
 ### Setup
 
-Install Node.js and Pulumi
-
 ```bash
+$ brew install node pulumi sshuttle
 $ npm i
 $ pulumi up
 ```
