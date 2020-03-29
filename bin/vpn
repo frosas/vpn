@@ -2,7 +2,7 @@
 
 set -e
 
-ssh_destination=$(pulumi stack output sshDestination --cwd $(dirname $0))
+ssh_destination=$(pulumi stack output sshDestination --stack prod --cwd $(dirname $0))
 ssh_command="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 sshuttle_command="sshuttle --dns --remote $ssh_destination --ssh-cmd \"$ssh_command\" 0/0 $@"
 sudo -E watchdog $sshuttle_command
