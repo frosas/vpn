@@ -3,8 +3,7 @@ import * as gcp from "@pulumi/gcp";
 const instance = new gcp.compute.Instance("vpn", {
   bootDisk: {
     initializeParams: {
-      image: "debian-9-stretch-v20200210"
-    }
+      image: "debian-10-buster-v20200413"
   },
   machineType: "f1-micro",
   networkInterfaces: [
