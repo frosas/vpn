@@ -1,10 +1,10 @@
 {
   "name": "vpn",
   "devDependencies": {
-    "@types/node": "^8.0.0"
+    "@types/node": "~12.12.37"
   },
   "dependencies": {
-    "@pulumi/pulumi": "^1.0.0",
-    "@pulumi/gcp": "^2.0.0"
+    "@pulumi/gcp": "^3.1.0",
+    "@pulumi/pulumi": "^2.0.0"
   }
 }
