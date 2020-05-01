@@ -1,5 +1,8 @@
 {
   "name": "vpn",
+  "scripts": {
+    "test": "echo Making Dependabot happy"
+  },
   "devDependencies": {
     "@types/node": "~12.12.37"
   },
