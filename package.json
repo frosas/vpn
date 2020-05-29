@@ -7,7 +7,7 @@
     "@types/node": "~12.12.42"
   },
   "dependencies": {
-    "@pulumi/gcp": "^3.7.0",
+    "@pulumi/gcp": "^3.7.1",
     "@pulumi/pulumi": "^2.3.0"
   }
 }
