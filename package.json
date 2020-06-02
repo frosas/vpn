@@ -4,7 +4,7 @@
     "test": "echo Making Dependabot happy"
   },
   "devDependencies": {
-    "@types/node": "~12.12.42"
+    "@types/node": "~12.12.43"
   },
   "dependencies": {
     "@pulumi/gcp": "^3.7.1",
