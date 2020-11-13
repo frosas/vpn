@@ -1,8 +1,9 @@
 #!/bin/bash
 
-set -e
+set -ex
 
-ssh_destination=$(pulumi stack output sshDestination --stack prod --cwd $(dirname $0))
+cwd="$(dirname "$0")"
+ssh_destination=$(pulumi stack output sshDestination --stack prod --cwd "$cwd")
 ssh_command="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
-sshuttle_command="sshuttle -v --dns --remote $ssh_destination --ssh-cmd \"$ssh_command\" 0/0 $@"
-sudo -E $(dirname $0)/watchdog $sshuttle_command
+sshuttle_command="sshuttle -v --dns --remote \"$ssh_destination\" --ssh-cmd \"$ssh_command\" 0/0 $*"
+sudo -E "$cwd/watchdog" "$sshuttle_command"
