@@ -6,4 +6,7 @@ cwd="$(dirname "$0")"
 ssh_destination=$(pulumi stack output sshDestination --stack prod --cwd "$cwd")
 ssh_command="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
 sshuttle_command="sshuttle -v --dns --remote \"$ssh_destination\" --ssh-cmd \"$ssh_command\" 0/0 $*"
-sudo -E "$cwd/watchdog" "$sshuttle_command"
+# TODO It seems --preserve-env is causing problems (ssh ... has to be ran first)
+# TODO What is sudo needed for?
+# sudo --preserve-env "$cwd/watchdog" "$sshuttle_command"
+"$cwd/watchdog" "$sshuttle_command"
