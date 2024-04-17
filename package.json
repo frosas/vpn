@@ -1,5 +1,10 @@
 {
   "name": "vpn",
+  "private": true,
+  "scripts": {
+    "test": "npm run typecheck",
+    "typecheck": "tsc --noEmit"
+  },
   "dependencies": {
     "@pulumi/gcp": "^6.2.0",
     "@pulumi/pulumi": "^3.3.1"
