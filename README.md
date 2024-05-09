@@ -6,7 +6,7 @@
 $ brew install node pulumi sshuttle google-cloud-sdk
 $ npm i
 $ gcloud auth application-default login
-$ pulumi up --stack prod --yes
+$ npm run infra-up
 ```
 
 ### Usage
@@ -18,5 +18,5 @@ $ bin/vpn
 ### Teardown
 
 ```bash
-$ pulumi destroy --stack prod --yes
+$ npm run infra-down
 ```

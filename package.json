@@ -2,6 +2,9 @@
   "name": "vpn",
   "private": true,
   "scripts": {
+    "infra-up": "npm run pulumi -- up --yes",
+    "infra-down": "npm run pulumi -- destroy --yes",
+    "pulumi": "pulumi --stack prod",
     "test": "npm run typecheck",
     "typecheck": "tsc --noEmit"
   },
