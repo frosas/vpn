@@ -1,3 +1,3 @@
 config:
   gcp:project: sandbox-1483639360121
-  gcp:zone: europe-west2-c
+  gcp:zone: europe-west1-b
