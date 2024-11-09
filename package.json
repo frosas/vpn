@@ -8,7 +8,7 @@
     "start": "npm run vpn-with-infra",
     "test": "npm run typecheck",
     "typecheck": "tsc --noEmit",
-    "vpn-with-infra": "npm run infra-up && trap 'npm run infra-down' EXIT && ./bin/vpn"
+    "vpn-with-infra": "npm run infra-up && trap 'npm run infra-down' EXIT && ./scripts/vpn"
   },
   "dependencies": {
     "@pulumi/gcp": "^8.0.0",
