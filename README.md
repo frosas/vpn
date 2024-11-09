@@ -6,7 +6,6 @@
 $ brew install node pulumi sshuttle google-cloud-sdk
 $ npm i
 $ gcloud auth application-default login
-$ npm run infra-up
 ```
 
 ### Configuration
@@ -20,11 +19,5 @@ You'll still need to pick a zone, which can be obtained while manually creating 
 ### Usage
 
 ```bash
-$ bin/vpn
-```
-
-### Teardown
-
-```bash
-$ npm run infra-down
+$ npm start
 ```
