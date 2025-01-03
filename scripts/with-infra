@@ -1,0 +1,19 @@
+#!/bin/bash
+# shellcheck disable=SC2128
+
+set -ex
+
+script_dir="$(dirname "$BASH_SOURCE")"
+
+finally() {
+  npm run infra-down
+}
+
+trap finally EXIT
+
+npm run infra-up
+
+echo "Waiting for SSH to be ready..."
+while ! "$script_dir/ssh-instance" "echo Ready"; do sleep 1; done
+
+"$@"

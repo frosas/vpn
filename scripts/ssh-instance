@@ -1,0 +1,10 @@
+#!/bin/bash
+# shellcheck disable=SC2128
+
+set -ex
+
+script_dir="$(dirname "$BASH_SOURCE")"
+
+"$script_dir/ssh" \
+  "$("$script_dir/pulumi-stack-output" sshDestination)" \
+  "$@"

@@ -1,12 +1,8 @@
 #!/bin/bash
+# shellcheck disable=SC2128
 
 set -ex
 
-cwd="$(dirname "$0")"
-ssh_destination=$(pulumi stack output sshDestination --stack prod --cwd "$cwd")
-ssh_command="ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
-sshuttle_command="sshuttle -v --dns --remote \"$ssh_destination\" --ssh-cmd \"$ssh_command\" 0/0 $*"
-# TODO It seems --preserve-env is causing problems (ssh ... has to be ran first)
-# TODO What is sudo needed for?
-# sudo --preserve-env "$cwd/watchdog" "$sshuttle_command"
-"$cwd/watchdog" "$sshuttle_command"
+script_dir="$(dirname "$BASH_SOURCE")"
+sshuttle_command="sshuttle -v --dns --remote \"$("$script_dir/pulumi-stack-output" sshDestination)\" --ssh-cmd \"$script_dir/ssh\" 0/0 $*"
+"$script_dir/watchdog" "$sshuttle_command"

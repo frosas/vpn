@@ -1,0 +1,21 @@
+#!/bin/bash
+# shellcheck disable=SC2128
+
+set -ex
+
+script_dir="$(dirname "$BASH_SOURCE")"
+
+local_host_port=$1
+
+if [ "$local_host_port" == "" ]; then
+  echo "Host and port not provided"
+  echo "Usage: [REMOTE_PORT=<port>] $0 <host>:<port>"
+  exit 1
+fi
+
+# Use provided port or fallback to any unused port
+remote_port="${REMOTE_PORT:-0}"
+
+"$script_dir/ssh-instance" \
+  -N \
+  -R "\*:$remote_port:$local_host_port"

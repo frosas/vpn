@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+cwd="$(dirname "$0")"
+pulumi stack output --stack prod --cwd "$cwd" "$@"
