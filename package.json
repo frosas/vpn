@@ -12,7 +12,7 @@
     "vpn-with-infra": "./scripts/with-infra ./scripts/vpn"
   },
   "dependencies": {
-    "@pulumi/gcp": "^8.0.0",
+    "@pulumi/gcp": "^9.0.0",
     "@pulumi/pulumi": "^3.3.1"
   }
 }
